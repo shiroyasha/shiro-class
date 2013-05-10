@@ -1,11 +1,20 @@
-# Shiro Class #
+# Shiro Class - Classical inheritance in Javascript#
 
 This is a simple implementation of classical style inheritance in javascript, based upon backbone inheritance model and John Resig simple inheritance model. It supports extending basic javascript types like Object, Array, String... In addition it supports automatic attribute linking with the instance object.
 
 It is aimed to be lightweight and independent of big libraries. The only dependicy it requires is **underscore.js**, but it is planned to be removed in future versions.
 
 ## Method reference ##
-...
+```javascript
+SomeClass.extend( definition, [classDefinitions])
+```
+Extend is a way to inherit some class with your method definiton passed as an argument to the function. The optional
+parameter classDefinitions adds statis(class) methods on the class itself.
+
+```javascript
+SomeClass.alias( name, listOfAlises )
+```
+Creates aliases for some class methods, see examples.
 
 ## Some Examples ##
 
