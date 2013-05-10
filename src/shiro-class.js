@@ -16,18 +16,21 @@
     // the things in the classDefinition
     // essentialy mimicking the classical inheritance model from languages
     // like Java, Python, C++, ...
-    function extend( classDefinition ) {
+    function extend( definition, staticDefinition ) {
         var parent = this;
 
         var r = function(attrs) {
             addAttributes.apply(this, [attrs]);
             this.init();
         };
-
+        
+        _.extend( r, parent );
+        
         ctor.prototype = parent.prototype;
         r.prototype = new ctor();
 
-        _.extend( r.prototype, classDefinition );
+        _.extend( r.prototype, definition );
+        _.extend( r, staticDefinition );
         r.prototype.__super__ = parent.prototype;
 
         return r;
