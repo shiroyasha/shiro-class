@@ -7,8 +7,16 @@ It is aimed to be lightweight and independent of big libraries. The only dependi
 ## Method reference ##
 
 ####SomeClass.extend( definition, [classDefinitions])####
-    Extend is a way to inherit some class with your method definiton passed as an argument to the function. The optional
-    parameter classDefinitions adds statis(class) methods on the class itself.
+Extend is a way to inherit some class with your method definiton passed as an argument to the function. 
+The optional parameter classDefinitions adds statis(class) methods on the class itself.
+    
+#### The ***init*** method ####
+The init method in definiton is used to initialize the instance. It ***SHOULD RECIEVE NO ARGUMENTS*** at all,
+because the prefered method of passing arugments to to constructor is by sending an object that contains all
+the attributes needed for the class that the library automaticly appends. [Why we do this?](#)
+
+### The ***this.__super__*** value ###
+The ***this.__super__*** keyword is used to access the parents methods or values, it can come handy when we overwrite some methods in the child class but wan't to access the original value.
 
 ####SomeClass.alias( name, listOfAlises )####
     Creates aliases for some class methods, see examples.
@@ -20,6 +28,10 @@ Let's create an ***Animal*** class. Each created animal can ***run*** with some 
 var Animal = Object.extend({
     run: function() {
         console.log('running with speed', this.speed, 'km/h' );
+    },
+    
+    speak: function() {
+        console.log('i don\'t know how to speak');        
     }
 });
 ```
