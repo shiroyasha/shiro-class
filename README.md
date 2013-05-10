@@ -5,16 +5,13 @@ This is a simple implementation of classical style inheritance in javascript, ba
 It is aimed to be lightweight and independent of big libraries. The only dependicy it requires is **underscore.js**, but it is planned to be removed in future versions.
 
 ## Method reference ##
-```javascript
-SomeClass.extend( definition, [classDefinitions])
-```
-Extend is a way to inherit some class with your method definiton passed as an argument to the function. The optional
-parameter classDefinitions adds statis(class) methods on the class itself.
 
-```javascript
-SomeClass.alias( name, listOfAlises )
-```
-Creates aliases for some class methods, see examples.
+####SomeClass.extend( definition, [classDefinitions])####
+    Extend is a way to inherit some class with your method definiton passed as an argument to the function. The optional
+    parameter classDefinitions adds statis(class) methods on the class itself.
+
+####SomeClass.alias( name, listOfAlises )####
+    Creates aliases for some class methods, see examples.
 
 ## Some Examples ##
 
