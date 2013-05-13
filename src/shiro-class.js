@@ -21,7 +21,14 @@
 
         var r = function(attrs) {
             addAttributes.apply(this, [attrs]);
-            this.init();
+            
+            // initialize all the subclasses            
+            function init(obj) {
+                if( this.__proto__ != Object.prototype) init.call( this.__proto__, obj);
+                if( this.init ) this.init.call(obj);
+            }
+            init.call(this.__proto__, this);
+            
         };
         
         _.extend( r, parent );
